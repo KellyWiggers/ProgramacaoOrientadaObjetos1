@@ -1,4 +1,4 @@
-package br.edu.utfpr.exemploEventosItemListener;
+package br.edu.utfpr.aula4_exemplo2;
 
 import java.awt.FlowLayout;
 import java.awt.Label;
