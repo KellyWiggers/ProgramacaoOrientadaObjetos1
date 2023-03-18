@@ -95,6 +95,6 @@ public class Empregado {
     @Override
     public String toString(){
         return "Nome: " + this.nome + "\n" + "Telefone: " + this.telefone + "\n" + "Idade: " + this.idade + "\n" + "Salario Bruto: " + this.salarioBruto +
-                "\n" + "Valor de desconto: " + calculaValorGratificacao(salarioBruto, cargo) + "\n" + "Salario Liquido: " + calculaSalarioLiquido(salarioBruto,cargo);
+                "\n" + "Valor de gratificação: " + calculaValorGratificacao(salarioBruto, cargo) + "\n" + "Salario Liquido: " + calculaSalarioLiquido(salarioBruto,cargo);
     }
 }

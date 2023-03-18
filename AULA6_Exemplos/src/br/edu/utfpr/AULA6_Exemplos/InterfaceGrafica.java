@@ -23,9 +23,9 @@ public class InterfaceGrafica {
     public InterfaceGrafica(){
         //criar o frame
         JFrame janela = new JFrame();
-        
+        janela.setLocationRelativeTo(null);//centraliza a janela
         //Criar os componentes
-       label1 = new JLabel("Nome: ");
+        label1 = new JLabel("Nome: ");
         nome = new JTextField();
         label2 = new JLabel("Telefone: ");
         telefone = new JTextField();
@@ -66,8 +66,8 @@ public class InterfaceGrafica {
         
         //adicionar os paineis no frame
         janela.add(panelDados, BorderLayout.NORTH);
-        janela.add(panelResultados, BorderLayout.CENTER);
-        janela.add(panelBotoes, BorderLayout.SOUTH);
+        janela.add(panelResultados, BorderLayout.SOUTH);
+        janela.add(panelBotoes, BorderLayout.CENTER);
         
         //Adicionando os eventos
         comboPessoa.addItemListener((e) -> itemSelecionado(e));
@@ -82,16 +82,17 @@ public class InterfaceGrafica {
     }
     
     public void itemSelecionado(ItemEvent e){
-		// Quando for selecionado um item
-		if(e.getStateChange() == ItemEvent.SELECTED){
-			if(e.getItem()== "Gerente")
-                            areaResultados.setText("Voce selecionou gerente");
-                        else
-                            areaResultados.setText("");
-		}
-	}
+            // Quando for selecionado um item
+            if(e.getStateChange() == ItemEvent.SELECTED){
+                    if(e.getItem()== "Gerente")
+                        areaResultados.setText("Voce selecionou gerente");
+                    else
+                        areaResultados.setText("");
+            }
+    }
     //Criando os métodos para definir os eventos
     public void imprimirCalculo(){
+        if (!nome.getText().equals("")) {
         Empregado empregado = new Empregado(
                 nome.getText(),
                 telefone.getText(),
@@ -100,7 +101,10 @@ public class InterfaceGrafica {
                 comboPessoa.getSelectedItem().toString()
         );
         areaResultados.setText(empregado.toString());
-        
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Todos o dados devem estar preenchidos");
+ 
     }
     
     public void limparDados(){
