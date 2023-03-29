@@ -230,12 +230,12 @@ public class Interface extends javax.swing.JFrame {
         
         Produto produto = new Produto(nome, valorUnitario, quantidade,
                 new Categoria(comboCategoria.getSelectedItem().toString()));
-        produtoDao.salvar(produto);
+        produtoDao.salvarNoDisco(produto);
         limpaCampos();
     }
     
     public void abrir(){
-        areaTexto.setText(produtoDao.abrir().toString());
+        areaTexto.setText(produtoDao.carregarDoDisco().toString());
     }
     
     

@@ -25,7 +25,7 @@ public class ProdutoDao {
     }
     
     
-    public void salvar(Produto produto){
+    public void salvarNoDisco(Produto produto){
         JFileChooser chooser = new JFileChooser();
         if(chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION){
             try (FileOutputStream output = new FileOutputStream(
@@ -41,7 +41,7 @@ public class ProdutoDao {
         }
     }
        
-    public Produto abrir(){
+    public Produto carregarDoDisco(){
         Produto produto = null;
         JFileChooser chooser = new JFileChooser();
         if(chooser.showOpenDialog(null)== JFileChooser.APPROVE_OPTION){
