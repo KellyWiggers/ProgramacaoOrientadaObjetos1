@@ -1,7 +1,2 @@
-A
-B
-C
-
-D
-E
-
+ABCDE
+EFGHI
