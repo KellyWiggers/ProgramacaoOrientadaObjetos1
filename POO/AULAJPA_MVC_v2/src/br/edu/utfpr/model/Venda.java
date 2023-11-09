@@ -35,7 +35,8 @@ public class Venda implements Serializable{
     @Column
     private double preco_total;
     
-    @ManyToOne(cascade = CascadeType.DETACH) // toda ação que tiver aqui é executada no banco
+    // toda ação que tiver aqui é executada no banco
+    @ManyToOne(cascade = CascadeType.DETACH) 
     @JoinColumn(name = "codigo_funcionario")
     private Funcionario funcionario;
     

@@ -38,7 +38,10 @@ public class VendasController {
         venda.setProduto(produto);
         venda.setQuantidade(Integer.parseInt(params.get("Quantidade")));
         venda.setPrecoTotal(produto.getPreco_Venda() * venda.getQuantidade());
+        produto.setQuantidade(produto.getQuantidade() - venda.getQuantidade());
+        prodDAO.atualiza(produto);
         vendaDAO.adiciona(venda);
+        
         // TODO: Se inserir for falso, retorna para cadastrar com mensagem de erro
         //VendasController.listar(params);
         VendasView.inicio();
